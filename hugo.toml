@@ -22,30 +22,39 @@ enableInlineShortcodes = true
 
 [menu]
 [[menu.main]]
+  name = '소개'
+  pageRef = '/about'
+  weight = 1
+[[menu.main]]
   name = '문서'
   pageRef = '/docs'
-  weight = 1
+  weight = 2
 [[menu.main]]
   name = '블로그'
   pageRef = '/blog'
-  weight = 2
+  weight = 3
 [[menu.main]]
   name = '카테고리'
   pageRef = '/categories'
-  weight = 3
+  weight = 4
 [[menu.main]]
   name = '태그'
   pageRef = '/tags'
-  weight = 4
+  weight = 5
 [[menu.main]]
   name = 'Search'
-  weight = 5
+  weight = 6
   [menu.main.params]
     type = 'search'
 [[menu.main]]
+  name = 'Theme'
+  weight = 7
+  [menu.main.params]
+    type = 'theme-toggle'
+[[menu.main]]
   name = 'GitHub'
   url = 'https://github.com/eple-lab'
-  weight = 6
+  weight = 8
   [menu.main.params]
     icon = 'github'
 
@@ -60,7 +69,7 @@ enableInlineShortcodes = true
 
 [params.theme]
   # light | dark | system
-  default = 'system'
+  default = 'dark'
   displayToggle = true
 
 [params.footer]
