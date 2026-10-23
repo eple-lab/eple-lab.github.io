@@ -1,36 +1,86 @@
 baseURL = 'https://eple-lab.github.io/'
 locale = 'ko-kr'
 defaultContentLanguage = 'ko'
-title = 'eple space'
-theme = 'hugo-book'
+title = 'espace eple'
+theme = 'hextra'
 
-# Book configuration
-disablePathToLower = true
+enableRobotsTXT = true
 enableGitInfo = true
+hasCJKLanguage = true
+enableInlineShortcodes = true
 
-# Needed for mermaid/katex shortcodes
+# Blog posts are grouped by categories and tags
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
 [markup]
+[markup.highlight]
+  noClasses = false
 [markup.goldmark.renderer]
   unsafe = true
 
-[markup.tableOfContents]
-  startLevel = 1
-
 [menu]
-[[menu.after]]
-  name = 'Github'
+[[menu.main]]
+  name = '문서'
+  pageRef = '/docs'
+  weight = 1
+[[menu.main]]
+  name = '블로그'
+  pageRef = '/blog'
+  weight = 2
+[[menu.main]]
+  name = '카테고리'
+  pageRef = '/categories'
+  weight = 3
+[[menu.main]]
+  name = '태그'
+  pageRef = '/tags'
+  weight = 4
+[[menu.main]]
+  name = 'Search'
+  weight = 5
+  [menu.main.params]
+    type = 'search'
+[[menu.main]]
+  name = 'GitHub'
   url = 'https://github.com/eple-lab'
-  weight = 10
+  weight = 6
+  [menu.main.params]
+    icon = 'github'
 
 [params]
-  # light, dark or auto
-  BookTheme = 'auto'
-  BookToC = true
-  # Root section rendered as the left menu
-  BookSection = 'docs'
-  BookRepo = 'https://github.com/eple-lab/eple-lab.github.io'
-  BookLastChangeLink = '{{ .Site.Params.BookRepo }}/commit/{{ .GitInfo.Hash }}'
-  BookEditLink = '{{ .Site.Params.BookRepo }}/edit/main/{{ .Path }}'
-  BookDateFormat = '2006-01-02'
-  BookSearch = true
-  BookComments = false
+  description = '공부하고 만든 것들을 기록하는 블로그'
+  displayUpdatedDate = true
+  dateFormat = '2006-01-02'
+
+[params.navbar]
+  displayTitle = true
+  displayLogo = false
+
+[params.theme]
+  # light | dark | system
+  default = 'system'
+  displayToggle = true
+
+[params.footer]
+  displayCopyright = false
+  displayPoweredBy = true
+
+[params.search]
+  enable = true
+  type = 'flexsearch'
+
+[params.editURL]
+  enable = true
+  base = 'https://github.com/eple-lab/eple-lab.github.io/edit/main/content'
+
+[params.blog.list]
+  displayTags = true
+  sortBy = 'date'
+  sortOrder = 'desc'
+  pagerSize = 20
+
+[params.highlight.copy]
+  enable = true
+  display = 'hover'
