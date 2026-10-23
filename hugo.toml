@@ -1,0 +1,36 @@
+baseURL = 'https://eple-lab.github.io/'
+locale = 'ko-kr'
+defaultContentLanguage = 'ko'
+title = 'eple space'
+theme = 'hugo-book'
+
+# Book configuration
+disablePathToLower = true
+enableGitInfo = true
+
+# Needed for mermaid/katex shortcodes
+[markup]
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.tableOfContents]
+  startLevel = 1
+
+[menu]
+[[menu.after]]
+  name = 'Github'
+  url = 'https://github.com/eple-lab'
+  weight = 10
+
+[params]
+  # light, dark or auto
+  BookTheme = 'auto'
+  BookToC = true
+  # Root section rendered as the left menu
+  BookSection = 'docs'
+  BookRepo = 'https://github.com/eple-lab/eple-lab.github.io'
+  BookLastChangeLink = '{{ .Site.Params.BookRepo }}/commit/{{ .GitInfo.Hash }}'
+  BookEditLink = '{{ .Site.Params.BookRepo }}/edit/main/{{ .Path }}'
+  BookDateFormat = '2006-01-02'
+  BookSearch = true
+  BookComments = false
