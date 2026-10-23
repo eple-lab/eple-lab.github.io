@@ -12,8 +12,8 @@ toc: false
   <p class="about-location">Seoul, Korea</p>
   <div class="about-stats">
     <div><strong>12+</strong><span>Years<br>Career</span></div>
-    <div><strong>20+</strong><span>Projects</span></div>
-    <div><strong>6+</strong><span>Projects<br>Led</span></div>
+    <div><strong>23+</strong><span>Projects</span></div>
+    <div><strong>5+</strong><span>Projects<br>Led</span></div>
   </div>
   <div class="about-links">
     <a href="https://github.com/eple-lab" target="_blank" rel="noopener">GitHub</a>
@@ -21,28 +21,31 @@ toc: false
 </aside>
 <div class="about-body">
 
-웹 개발로 시작해 RESTful API, 인증, 데이터 설계를 다루다 보니 자연스럽게 백엔드 설계와 PL 역할을 맡게 됐습니다.
+RESTful API, 인증, 데이터 설계를 다루다 보니 자연스럽게 백엔드 설계와 core 및 공통개발, PL 역할을 맡게 됐습니다.
 
-12년 넘게 공공, 금융, 커머스, IoT 분야에서 Java/Spring 기반 서비스의 구조 설계부터 인증·OAuth2, DB 설계, 레거시 마이그레이션까지 다양한 프로젝트를 이끌어 왔습니다.
+공공, 금융, 커머스, IoT 등 다양한 도메인 분야에서
+Java/Spring 기반 서비스의 구조 설계부터 인증·OAuth2, DB 설계, 레거시 마이그레이션까지 다양한 프로젝트를 이끌어 왔습니다.
 
-지금은 [아이펠(AIFFEL) AI 에이전트 과정](https://aiffel.io/ai-agent)을 들으며 AI 에이전트 개발로 영역을 넓히고 있습니다.
+지금은 AI 에이전트 개발로 영역을 넓히고 있습니다.
 
-## What I Do
+## What I Did
 
-- **System Design** — 프로젝트 구조, DB·데이터 구조, 인터페이스 설계
+- **System Design** — 프로젝트 구조 및 공통 개발, DB·데이터 구조, 인터페이스 설계
 - **Authentication** — OAuth2 서버, 2-Factor 인증, 자동 로그인, 본인인증·SNS 인증 연동
 - **API & Integration** — RESTful API 설계·개발, 외부 시스템·공공 API 연동, Gateway 구축
-- **Migration** — 레거시 프레임워크 전환, 데이터 이관 및 암호화
-- **Project Leading** — 요구사항 분석, 고객 인터뷰, PL 업무, 시큐어 코딩·코드 리팩터링
+- **Migration** — 레거시 프레임워크 전환, 데이터 이관 및 암호화, ETL 개발, 차세대 프로젝트 진행
+- **Project Leading** — 요구사항 분석, 고객 인터뷰, PL 업무, 개발코드기반 산출물 auto Reporting, 시큐어 코딩·코드 리팩터링
 
 ## Experience
 
-### 아리수 요금관리시스템 기능 고도화 및 인프라 개선
+### 요금관리시스템 기능 고도화 및 인프라 개선
 **PL** · 2025.05 – 2026.09
 
 - Java 5 → 11, Spring → Spring Boot, iBATIS → MyBatis, XPlatform → Nexacro 마이그레이션
-- 세입 현계 분석·설계와 징수결의 전자결재 고도화
+- 세입 현계 분석·설계와 징수결의 전자결재모듈 고도화
 - 예산회계시스템, 디지털 아리수ON 연계 API 인터페이스 설계·개발
+- DB 표준화·프레임워크 마이그레이션에 따른 전체 소스 코드 변환 프로그램 개발
+- 소스 코드 기반 설계·산출물 자동 생성 프로그램 다수 개발 ([산출물 종류] 10종+, 수작업 대비 70%+ 단축(반복작업 포함), 감리 만족도 최우수)
 
 `Java` `eGovFrame` `Spring Boot` `Spring Batch` `MyBatis` `Nexacro` `Oracle`
 
@@ -54,7 +57,7 @@ toc: false
 
 `Java` `Spring Boot` `Spring Batch` `MyBatis` `Vue.js` `Kafka` `Kubernetes`
 
-### 지자체 통합복지 플랫폼 구축
+### 전국 지자체 통합복지 플랫폼 구축
 **PL** · 2023.07 – 2024.02
 
 - 통합복지 플랫폼 DB·배치·인터페이스 설계, 핵심 데이터와 공통코드 정의
@@ -62,7 +65,7 @@ toc: false
 
 `Java` `Spring Boot` `JPA` `Vue.js` `Kafka` `Docker` `Kubernetes`
 
-### 패션 통합몰 구축
+### 의류 커머스 통합몰 구축
 **PL** · 2023.01 – 2023.06
 
 - 회원·인증 전반(로그인, 자동 로그인, 본인인증, SNS 인증) 개발
@@ -74,6 +77,7 @@ toc: false
 **메인·공통 개발** · 2022.08 – 2022.12
 
 - 프로젝트 구조 설정, OAuth2 설계·개발, 복합 권한 인증 구현
+- Spring core, eGovFramework 복합설계·개발
 - DB 암호화 적용 및 시큐어 코딩 대응
 
 `Java` `eGovFrame` `Spring Security` `MyBatis` `Tibero`
@@ -81,7 +85,7 @@ toc: false
 ### IoT 플랫폼 개발 및 운영
 **개발** · 2017.03 – 2020.04
 
-- OAuth2 서버, 2-Factor 인증, Gateway 개발
+- OAuth2 서버, 2-Factor 인증, Gateway 개발, encription 모듈 개발
 - 디바이스·센서 연동, 실시간 이벤트 대시보드, MQTT·STOMP 로그 분석
 
 `Java` `Spring Boot` `PostgreSQL` `Kafka` `Spark` `HAProxy` `AngularJS`
@@ -90,7 +94,7 @@ toc: false
 
 2012년부터 공공, 교육, 보험, 유통 분야의 웹 서비스를 개발해 왔습니다.
 
-- 온라인 클래스 재구조화 (2021) — 클래스 핵심 기능, OAuth2 인증, WebSocket 채팅
+- 온라인 클래스 재구조화 (2021) — 클래스관리 핵심 기능, OAuth2 인증, WebSocket 채팅기능 개발
 - 커피 브랜드 온디맨드 서비스 (2020) — 서비스 구조 설계, 상품 정보 연동
 - 식품 표시심의 시스템 (2021) — 신규 구축, DB 설계, AI 시스템 연동
 - 보험사 GA 채널 통합 플랫폼 (2022) — RESTful API, 관리자 개발
@@ -103,7 +107,7 @@ toc: false
 ## Certifications
 
 - 정보처리기사 (2020)
-- 정보처리기능사 (2014)
+- Anthropic AI Fluency Framework (4D) 과정 수료
 
 </div>
 </div>
