@@ -8,16 +8,7 @@ toc: false
 <aside class="about-card">
   <div class="about-avatar">e</div>
   <h2 class="about-name">eple</h2>
-  <p class="about-role">
-  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="chictimin">
-  <rect width="32" height="32" rx="7" fill="#000000" />
-  <path d="M21.2 11.2c-1.1-1.2-2.6-1.9-4.4-1.9-3.5 0-6.3 2.9-6.3 6.7s2.8 6.7 6.3 6.7c1.8 0 3.3-.7 4.4-1.9l-2-1.9c-.6.7-1.4 1.1-2.4 1.1-1.9 0-3.4-1.8-3.4-4s1.5-4 3.4-4c1 0 1.8.4 2.4 1.1l2-1.9z" fill="#14b8a6" />
-</svg>
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-    <rect width="32" height="32" rx="7" fill="#000000" />
-    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" fill="#14b8a6" />
-</svg>
-Backend Engineer · AI Agent (studying)</p>
+  <p class="about-role">Backend Engineer · AI Agent (studying)</p>
   <p class="about-location">Seoul, Korea</p>
   <div class="about-stats">
     <div><strong>12+</strong><span>Years<br>Career</span></div>
