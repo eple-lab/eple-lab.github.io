@@ -18,10 +18,17 @@ toc: false
   <div class="about-links">
     <a href="https://github.com/eple-lab" target="_blank" rel="noopener">GitHub</a>
   </div>
+  <div class="about-tech">
+    <p class="about-Stack">
+    `Java` `Spring Boot` `Spring Security` `Spring Batch` 
+    `eGovFrame` `MyBatis` `JPA` `OAuth2` `MSA` `Kafka` `Oracle` `PostgreSQL` `MySQL` 
+    `Docker` `Kubernetes` `Jenkins` `Git` `XPlatform` `Nexacro` `NCRM</p>
+  </div>
 </aside>
 <div class="about-body">
 
 안녕하세요, eple입니다.
+
 RESTful API, 인증, 데이터 설계를 다루다 보니 자연스럽게 백엔드 설계와 core 및 공통개발, PL 역할을 맡게 되었습니다.
 
 공공, 금융, 커머스, IoT, 회계 등 다양한 도메인 분야에서
@@ -110,9 +117,6 @@ Java/Spring 기반 서비스의 구조 설계부터 인증·OAuth2, DB 설계, �
 - 보험사 GA 채널 통합 플랫폼 (2022) — RESTful API, 관리자 개발
 - 기상청 빅데이터 웹사이트, 특허·지식재산 포털 (2014 – 2016) — 웹·API 개발, Open API 연동
 
-## Tech Stack
-
-`Java` `Spring Boot` `Spring Security` `Spring Batch` `eGovFrame` `MyBatis` `JPA` `OAuth2` `MSA` `Kafka` `Oracle` `PostgreSQL` `MySQL` `Docker` `Kubernetes` `Jenkins` `Git`
 
 ## Certifications
 
