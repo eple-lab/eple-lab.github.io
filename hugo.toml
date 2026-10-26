@@ -72,8 +72,9 @@ enableInlineShortcodes = true
   displayToggle = true
 
 [params.footer]
-  displayCopyright = false
-  displayPoweredBy = true
+  # Text (with Hugo/Hextra links) lives in i18n/ko.yaml under "copyright"
+  displayCopyright = true
+  displayPoweredBy = false
 
 [params.search]
   enable = true

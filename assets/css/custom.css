@@ -6,6 +6,17 @@
   --primary-lightness: 40%;
 }
 
+/* Footer links: plain text, mint on hover */
+.hextra-footer a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.hextra-footer a:hover {
+  color: hsl(var(--primary-hue) var(--primary-saturation) 45%);
+}
+
 /* Top menu: mint on hover */
 .hextra-nav-container nav a:hover,
 .hextra-nav-container nav button:hover {
