@@ -17,19 +17,22 @@ toc: false
   </div>
   <div class="about-links">
     <a href="https://github.com/eple-lab" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://discord.com/users/freewebeple" target="_blank" rel="noopener">discord</a>
+    <a href="https://www.linkedin.com/in/eple-e-3b3013442" target="_blank" rel="noopener">linkedin</a>
   </div>
   <div class="about-tech">
-    <p class="about-Stack">
+    <p class="about-stack">
     `Java` `Spring Boot` `Spring Security` `Spring Batch` 
     `eGovFrame` `MyBatis` `JPA` `OAuth2` `MSA` `Kafka` `Oracle` `PostgreSQL` `MySQL` 
-    `Docker` `Kubernetes` `Jenkins` `Git` `XPlatform` `Nexacro` `NCRM</p>
+    `Docker` `Kubernetes` `Jenkins` `Git` `XPlatform` `Nexacro` `NCRM`</p>
   </div>
 </aside>
 <div class="about-body">
 
 안녕하세요, eple입니다.
+웹을 좋아하는 AI Agent(studying) 개발자 입니다. 
 
-RESTful API, 인증, 데이터 설계를 다루다 보니 자연스럽게 백엔드 설계와 core 및 공통개발, PL 역할을 맡게 되었습니다.
+RESTful API, 인증, 데이터 설계를 다루다 보니 자연스럽게 백엔드 설계와 핵심 공통 개발, PL 역할을 맡게 되었습니다.
 
 공공, 금융, 커머스, IoT, 회계 등 다양한 도메인 분야에서
 Java/Spring 기반 서비스의 구조 설계부터 인증·OAuth2, DB 설계, 레거시 마이그레이션까지 다양한 프로젝트를 이끌어 왔습니다.
@@ -38,20 +41,25 @@ Java/Spring 기반 서비스의 구조 설계부터 인증·OAuth2, DB 설계, �
 지금은 AI 에이전트 개발로 영역을 넓히고 있습니다.
 
 최근
-- "기업의 AX 도입에 내부데이터 보안 뿐만 아니라 시스템 접근 보안을 어떻게 적용할 것인가 "
-- "에이전트에게 일을 맡기되, 어디까지 믿고 어떤 권한을 줄 것인가",
-- "에이전트는 프롬프트 보안처리 보다 직접 엑세스 퀀한 축소 및 확장 권한 컨펌 기능이 개별 프로그램에서 진행되어야 한다(+로깅)"
+- 기업이 AX를 도입할 때, 내부 데이터 보안을 넘어 시스템 접근 보안은 어떻게 적용할까
+- 에이전트에게 일을 맡기되, 어디까지 믿고 어떤 권한을 줄까
+- 에이전트는 프롬프트 방어보다, 권한 범위의 축소·확장과 사람의 컨펌, 그리고 로깅을 각 프로그램 단에서 처리해야 하지 않을까
 부분에 많은 생각이 들어요. 
 
 이 블로그에는 그 답을 찾아가며 직접 만든 자동화와 고민들을 기록해 가려고 합니다.
+
+
+## Now Building
+- news-pick - AI·에이전트 뉴스를 수집·요약 자동화
+
 
 ## What I Did
 
 - **System Design** — 프로젝트 구조 및 공통 개발, DB·데이터 구조, 인터페이스 설계
 - **Authentication** — OAuth2 서버, 2-Factor 인증, 자동 로그인, 본인인증·SNS 인증 연동
 - **API & Integration** — RESTful API 설계·개발, 외부 시스템·공공 API 연동, Gateway 구축
-- **Migration** — 레거시 프레임워크 전환, 데이터 이관 및 암호화, ETL 개발, 차세대 프로젝트 진행
-- **Project Leading** — 요구사항 분석, 고객 인터뷰, PL 업무, 개발코드기반 산출물 auto Reporting, 시큐어 코딩·코드 리팩터링
+- **Migration** — 레거시 프레임워크 전환, 데이터 이관 및 암호화, ETL 개발, 고도화 프로젝트 진행
+- **Project Leading** — 요구사항 분석, 고객 인터뷰, PL 업무, 개발코드기반 산출물 auto Reporting, 시큐어 코딩·코드 리팩토링
 
 ## Experience
 
@@ -60,9 +68,9 @@ Java/Spring 기반 서비스의 구조 설계부터 인증·OAuth2, DB 설계, �
 
 - Java 5 → 11, Spring → Spring Boot, iBATIS → MyBatis, XPlatform → Nexacro 마이그레이션
 - 세입 현계 분석·설계와 징수결의 전자결재모듈 고도화
-- 예산회계시스템, 디지털 아리수ON 연계 API 인터페이스 설계·개발
+- 예산회계시스템, 대외 연계 시스템 API 인터페이스 설계·개발
 - DB 표준화·프레임워크 마이그레이션에 따른 전체 소스 코드 변환 프로그램 개발
-- 소스 코드 기반 설계·산출물 자동 생성 프로그램 다수 개발 ([산출물 종류] 10종+, 수작업 대비 70%+ 단축(반복작업 포함), 감리 만족도 최우수)
+- 소스 코드 기반 설계·산출물 자동 생성 프로그램 다수 개발 (산출물 10종+, 수작업 및 반복작성 단축, 감리 과정에서 파트별 평가 최우수 피드백)
 
 `Java` `eGovFrame` `Spring Boot` `Spring Batch` `MyBatis` `Nexacro` `Oracle`
 
@@ -74,7 +82,7 @@ Java/Spring 기반 서비스의 구조 설계부터 인증·OAuth2, DB 설계, �
 
 `Java` `Spring Boot` `Spring Batch` `MyBatis` `Vue.js` `Kafka` `Kubernetes`
 
-### 전국 지자체 통합복지 플랫폼 구축
+### 지자체별 통합복지 플랫폼 구축
 **PL** · 2023.07 – 2024.02
 
 - 통합복지 플랫폼 DB·배치·인터페이스 설계, 핵심 데이터와 공통코드 정의
@@ -102,7 +110,7 @@ Java/Spring 기반 서비스의 구조 설계부터 인증·OAuth2, DB 설계, �
 ### IoT 플랫폼 개발 및 운영
 **개발** · 2017.03 – 2020.04
 
-- OAuth2 서버, 2-Factor 인증, Gateway 개발, encription 모듈 개발
+- OAuth2 서버, 2-Factor 인증, Gateway 개발, encryption 모듈 개발
 - 디바이스·센서 연동, 실시간 이벤트 대시보드, MQTT·STOMP 로그 분석
 
 `Java` `Spring Boot` `PostgreSQL` `Kafka` `Spark` `HAProxy` `AngularJS`
@@ -117,11 +125,16 @@ Java/Spring 기반 서비스의 구조 설계부터 인증·OAuth2, DB 설계, �
 - 보험사 GA 채널 통합 플랫폼 (2022) — RESTful API, 관리자 개발
 - 기상청 빅데이터 웹사이트, 특허·지식재산 포털 (2014 – 2016) — 웹·API 개발, Open API 연동
 
-
 ## Certifications
 
 - 정보처리기사 (2020)
+
+
+## Learning
+
 - Anthropic AI Fluency Framework (4D) 과정 수료
+- aiffel AI Agent(studying)
+
 
 </div>
 </div>
