@@ -3,11 +3,18 @@ locale = 'ko-kr'
 defaultContentLanguage = 'ko'
 title = 'espace eple'
 theme = 'hextra'
+# Dates without an offset (e.g. 2026-10-26 14:23:05) are Korean time
+timeZone = 'Asia/Seoul'
 
 enableRobotsTXT = true
 enableGitInfo = true
 hasCJKLanguage = true
 enableInlineShortcodes = true
+
+# date: when the post was first written (used for ordering)
+# lastmod: set by hand only when the content really changed; falls back to date
+[frontmatter]
+  lastmod = ['lastmod', 'date']
 
 # Blog posts are grouped by categories and tags
 [taxonomies]
@@ -26,7 +33,7 @@ enableInlineShortcodes = true
   pageRef = '/about'
   weight = 1
 [[menu.main]]
-  name = 'Doc'
+  name = 'Docs'
   pageRef = '/docs'
   weight = 2
 [[menu.main]]

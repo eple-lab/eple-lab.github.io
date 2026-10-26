@@ -49,7 +49,7 @@ AI 에이전트가 '시키면 하는' 단계에서 '먼저 챙기는' 단계로 
 
 ## 문서 구성
 
-{{< cards >}}
+{{< cards cols="1" >}}
   {{< card link="how-it-works" title="동작 방식" subtitle="8단계 처리 순서, 출력 형식, 검증 체크리스트" >}}
   {{< card link="history" title="히스토리" subtitle="과제 설계부터 첫 실행까지" >}}
 {{< /cards >}}

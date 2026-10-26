@@ -1,6 +1,6 @@
 ---
 title: 첫 글
-date: 2026-10-23
+date: 2026-10-23 20:10:00
 categories:
   - 일상
 tags:
