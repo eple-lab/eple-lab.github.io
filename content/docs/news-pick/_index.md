@@ -7,7 +7,7 @@ weight: 1
 
 - 저장소: [eple-lab/news-pick](https://github.com/eple-lab/news-pick)
 - 시작: 2026-10-23
-- 출발점: [뉴스 크롤링부터 캡션까지, 콘텐츠 발행 자동화 프롬프트 설계](/blog/assignment/computational_thinking_2026-10-23/) (과제)
+- 출발점: [뉴스 크롤링부터 캡션까지, 콘텐츠 발행 자동화 프롬프트 설계](/blog/assignment/computational-thinking_2026-10-23/) (과제)
 
 ## 무엇을 만드나
 

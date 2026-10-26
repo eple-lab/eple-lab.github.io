@@ -1,6 +1,8 @@
 ---
 title: 뉴스 크롤링부터 캡션까지, 콘텐츠 발행 자동화 프롬프트 설계
-date: 2026-10-23 12:00:00
+date: 2026-10-26 12:00:00
+aliases:
+  - /blog/assignment/computational_thinking_2026-10-23/
 categories:
   - 과제 제출
 tags:

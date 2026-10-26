@@ -76,6 +76,16 @@ enableInlineShortcodes = true
   displayCopyright = true
   displayPoweredBy = false
 
+# Contact links on the right side of the footer
+[[params.footer.links]]
+  name = 'GitHub'
+  url = 'https://github.com/eple-lab'
+  icon = 'github'
+[[params.footer.links]]
+  name = 'Email'
+  url = 'mailto:eple_freeweb@naver.com'
+  icon = 'mail'
+
 [params.search]
   enable = true
   type = 'flexsearch'

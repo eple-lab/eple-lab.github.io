@@ -7,7 +7,13 @@ https://eple-lab.github.io/
 ## 로컬 실행
 
 ```bash
+# 1. Hugo 설치 (PC에 한 번만, 설치 후 터미널을 새로 열기)
+winget install Hugo.Hugo.Extended
+
+# 2. 새로 clone했을 때만: 테마 받기
 git submodule update --init --recursive
+
+# 3. 블로그 폴더에서 미리보기 실행 → http://localhost:1313/
 hugo server
 ```
 

@@ -6,6 +6,35 @@
   --primary-lightness: 40%;
 }
 
+/* Footer: copyright on the left, contact links on the right (stacked on phones) */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.8rem;
+}
+
+.hextra-footer .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+}
+
 /* Footer links: plain text, mint on hover */
 .hextra-footer a {
   color: inherit;
@@ -264,6 +293,51 @@
   border-radius: 9999px;
   font-size: 0.7rem;
   background: rgb(127 127 127 / 0.15);
+}
+
+/* Chat shortcode: my messages as right-aligned bubbles, AI answers as plain text on the left */
+.chat {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0;
+}
+
+.chat-me {
+  align-items: flex-end;
+}
+
+.chat-me .chat-bubble {
+  max-width: 80%;
+  padding: 0.75rem 1.1rem;
+  border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+  background: rgb(127 127 127 / 0.12);
+  border: 1px solid hsl(var(--primary-hue) var(--primary-saturation) 45% / 0.4);
+}
+
+.chat-name {
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: hsl(var(--primary-hue) var(--primary-saturation) 45%);
+}
+
+.chat-ai .chat-bubble {
+  padding-left: 0.9rem;
+  border-left: 2px solid rgb(127 127 127 / 0.25);
+}
+
+.chat-bubble > :first-child {
+  margin-top: 0;
+}
+
+.chat-bubble > :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .chat-me .chat-bubble {
+    max-width: 92%;
+  }
 }
 
 /* About page: profile card on the left, content on the right */

@@ -1,8 +1,10 @@
 ---
 title: 첫 글
 date: 2026-10-23 20:10:00
+aliases:
+  - /blog/hello-world/
 categories:
-  - 일상
+  - 개발
 tags:
   - 블로그
 ---

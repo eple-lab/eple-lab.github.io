@@ -1,0 +1,17 @@
+{{- /*
+A chat bubble for conversations with an AI.
+
+@param {string} 0 Who is speaking: "me" (right-aligned bubble) or "ai" (left-aligned answer).
+@param {string} 1 Optional speaker label shown above an "ai" message (default "AI").
+
+@example {{< chat me >}}질문{{< /chat >}}
+@example {{< chat ai Gemini >}}답변{{< /chat >}}
+*/ -}}
+{{- $role := .Get 0 | default "ai" -}}
+{{- $name := .Get 1 | default "AI" -}}
+<div class="chat chat-{{ $role }}">
+  {{- if ne $role "me" }}<div class="chat-name">{{ $name }}</div>{{ end }}
+  <div class="chat-bubble">
+    {{ .Inner | .Page.RenderString (dict "display" "block") }}
+  </div>
+</div>
