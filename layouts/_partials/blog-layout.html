@@ -1,0 +1,54 @@
+{{- /*
+Blog page body shared by the blog list and category/tag pages:
+category and tag lists on the left, post cards on the right.
+
+@param {Page} page The page being rendered.
+@param {Pages} pages The posts to show.
+@param {string} label Optional small label above the title (e.g. "Category").
+*/ -}}
+{{- $page := .page -}}
+<div class="hx:mx-auto hx:flex hextra-max-page-width">
+  {{- /* No placeholder: the category/tag list takes the place of the theme sidebar */ -}}
+  {{ partial "sidebar.html" (dict "context" $page "disableSidebar" true "displayPlaceholder" false) }}
+  <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--hextra-navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+    <main id="content" class="hx:w-full hx:min-w-0 hextra-max-page-width hx:px-6 hx:pt-4">
+      {{ partial "custom/page-begin.html" $page }}
+      <div class="blog-layout">
+        {{ partial "blog-side.html" (dict "page" $page) }}
+
+        <div class="blog-main">
+          {{ with .label }}<p class="blog-label">{{ . }}</p>{{ end }}
+          <h1 class="blog-title">{{ $page.Title }}</h1>
+          <div class="content">
+            {{ partial "custom/content-begin.html" $page }}
+            {{ $page.Content }}
+            {{ partial "custom/content-end.html" $page }}
+          </div>
+          {{- $pagerSize := site.Params.blog.list.pagerSize | default 10 -}}
+          {{- $paginator := $page.Paginate .pages $pagerSize -}}
+          <div class="post-grid">
+            {{- range $paginator.Pages }}
+              <a class="post-card" href="{{ .RelPermalink }}">
+                <div class="post-card-head">
+                  <h3 class="post-card-title">{{ .Title }}</h3>
+                  {{- with .Params.categories }}<span class="post-card-badge">{{ index . 0 }}</span>{{ end }}
+                </div>
+                <p class="post-card-meta">{{ partial "utils/format-date" .Date }} · {{ .ReadingTime }}분 분량</p>
+                <p class="post-card-summary">{{- partial "utils/page-description" . -}}</p>
+                {{- with .Params.tags }}
+                  <div class="post-card-tags">
+                    {{- range . }}<span>{{ . }}</span>{{ end -}}
+                  </div>
+                {{- end }}
+              </a>
+            {{- end }}
+          </div>
+          {{- if gt $paginator.TotalPages 1 -}}
+            {{ partial "components/blog-pager.html" $paginator }}
+          {{- end -}}
+        </div>
+      </div>
+      {{ partial "custom/page-end.html" $page }}
+    </main>
+  </article>
+</div>

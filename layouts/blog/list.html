@@ -1,0 +1,6 @@
+{{- /* Overrides themes/hextra/layouts/blog/list.html: category/tag sidebar with a post card grid */ -}}
+{{ define "main" }}
+  {{- /* Newest first; posts on the same date are ordered by last modified (git commit) time */ -}}
+  {{- $pages := sort (sort .RegularPagesRecursive "Lastmod" "desc") "Date" "desc" -}}
+  {{ partial "blog-layout.html" (dict "page" . "pages" $pages) }}
+{{- end -}}

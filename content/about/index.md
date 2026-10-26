@@ -1,6 +1,6 @@
 ---
 title: About
-layout: wide
+layout: about
 toc: false
 ---
 
@@ -16,17 +16,19 @@ toc: false
     <div><strong>5+</strong><span>Projects<br>Led</span></div>
   </div>
   <div class="about-links">
-    <a href="https://github.com/eple-lab" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://discord.com/users/freewebeple" target="_blank" rel="noopener">discord</a>
-    <a href="https://www.linkedin.com/in/eple-e-3b3013442" target="_blank" rel="noopener">linkedin</a>
+    <a href="https://github.com/eple-lab" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">{{< icon "github" >}}</a>
+    <a href="https://discord.com/users/freewebeple" target="_blank" rel="noopener" title="Discord" aria-label="Discord">{{< icon "discord" >}}</a>
+    <a href="https://www.linkedin.com/in/eple-e-3b3013442" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">{{< icon "linkedin" >}}</a>
+    <a href="mailto:eple_freeweb@naver.com" title="Email" aria-label="Email">{{< icon "mail" >}}</a>
   </div>
   <div class="about-tech">
-    <p class="about-stack">
-    `Java` `Spring Boot` `Spring Security` `Spring Batch` 
-    `eGovFrame` `MyBatis` `JPA` `OAuth2` `MSA` `Kafka` `Oracle` `PostgreSQL` `MySQL` 
-    `Docker` `Kubernetes` `Jenkins` `Git` `XPlatform` `Nexacro` `NCRM`</p>
+    <span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>Spring Batch</span>
+    <span>eGovFrame</span><span>MyBatis</span><span>JPA</span><span>OAuth2</span><span>MSA</span><span>Kafka</span><span>Oracle</span><span>PostgreSQL</span><span>MySQL</span>
+    <span>Docker</span><span>Kubernetes</span><span>Jenkins</span><span>Git</span><span>XPlatform</span><span>Nexacro</span><span>NCRM</span>
   </div>
 </aside>
+<div class="about-main">
+<h1 class="sr-only">About</h1>
 <div class="about-body">
 
 안녕하세요, eple입니다.
@@ -136,5 +138,6 @@ Java/Spring 기반 서비스의 구조 설계부터 인증·OAuth2, DB 설계, �
 - aiffel AI Agent(studying)
 
 
+</div>
 </div>
 </div>

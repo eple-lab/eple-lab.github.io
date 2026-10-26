@@ -22,25 +22,17 @@ enableInlineShortcodes = true
 
 [menu]
 [[menu.main]]
-  name = '소개'
+  name = 'About'
   pageRef = '/about'
   weight = 1
 [[menu.main]]
-  name = '문서'
+  name = 'Doc'
   pageRef = '/docs'
   weight = 2
 [[menu.main]]
-  name = '블로그'
+  name = 'Blog'
   pageRef = '/blog'
   weight = 3
-[[menu.main]]
-  name = '카테고리'
-  pageRef = '/categories'
-  weight = 4
-[[menu.main]]
-  name = '태그'
-  pageRef = '/tags'
-  weight = 5
 [[menu.main]]
   name = 'Search'
   weight = 6

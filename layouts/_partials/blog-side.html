@@ -1,0 +1,34 @@
+{{- /*
+Category and tag lists for the blog. The current page, or the terms a post
+belongs to, are highlighted.
+
+@param {Page} page The page being rendered.
+@param {string} class Optional extra class on the <aside>.
+*/ -}}
+{{- $page := .page -}}
+{{- $blog := site.GetPage "/blog" -}}
+{{- $postCategories := slice -}}
+{{- range $page.GetTerms "categories" }}{{ $postCategories = $postCategories | append .RelPermalink }}{{ end -}}
+{{- $postTags := slice -}}
+{{- range $page.GetTerms "tags" }}{{ $postTags = $postTags | append .RelPermalink }}{{ end -}}
+<aside class="blog-side {{ .class }}">
+  <nav class="blog-side-group" aria-label="Categories">
+    <h2 class="blog-side-title">Categories</h2>
+    <ul>
+      <li><a href="{{ $blog.RelPermalink }}" {{ if eq $page $blog }}class="active"{{ end }}>전체 <span>{{ len $blog.RegularPagesRecursive }}</span></a></li>
+      {{- range site.Taxonomies.categories.Alphabetical }}
+        <li><a href="{{ .Page.RelPermalink }}" {{ if or (eq .Page $page) (in $postCategories .Page.RelPermalink) }}class="active"{{ end }}>{{ .Page.LinkTitle }} <span>{{ .Count }}</span></a></li>
+      {{- end }}
+    </ul>
+  </nav>
+  {{- with site.Taxonomies.tags }}
+    <nav class="blog-side-group" aria-label="Tags">
+      <h2 class="blog-side-title">Tags</h2>
+      <div class="blog-side-tags">
+        {{- range .Alphabetical }}
+          <a href="{{ .Page.RelPermalink }}" {{ if or (eq .Page $page) (in $postTags .Page.RelPermalink) }}class="active"{{ end }}>#{{ .Page.LinkTitle }}</a>
+        {{- end }}
+      </div>
+    </nav>
+  {{- end }}
+</aside>

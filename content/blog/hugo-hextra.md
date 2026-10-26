@@ -1,6 +1,6 @@
 ---
 title: Hextra 테마로 바꾸기
-date: 2026-10-23T12:00:00+09:00
+date: 2026-10-23
 categories:
   - 개발
 tags:

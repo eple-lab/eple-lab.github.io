@@ -1,0 +1,7 @@
+{{- /* Overrides themes/hextra/layouts/term.html: a category or tag page uses the blog layout */ -}}
+{{ define "main" }}
+  {{- /* Newest first; posts on the same date are ordered by last modified (git commit) time */ -}}
+  {{- $pages := sort (sort .Pages "Lastmod" "desc") "Date" "desc" -}}
+  {{- $label := cond (eq .Data.Plural "tags") "Tag" "Category" -}}
+  {{ partial "blog-layout.html" (dict "page" . "pages" $pages "label" $label) }}
+{{- end -}}
