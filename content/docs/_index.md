@@ -8,4 +8,5 @@ toc: false
 
 {{< cards cols="1" >}}
   {{< card link="news-pick" title="news-pick" subtitle="최신 AI 뉴스 3건으로 인스타그램 콘텐츠 패키지를 만드는 에이전트" >}}
+  {{< card link="dalbit-lake" title="dalbit-lake" subtitle="달빛 호수를 배경으로 한 웹 게임 모음 (별빛 받기, 반딧불이 모으기)" >}}
 {{< /cards >}}
