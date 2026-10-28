@@ -1,0 +1,8 @@
+{{- /* Home page: the newest blog posts as post cards. @param {int} count How many posts (default 3). */ -}}
+{{- $count := .Get "count" | default 3 -}}
+{{- $posts := where site.RegularPages "Section" "blog" -}}
+<div class="post-grid home-posts">
+  {{- range first $count $posts.ByDate.Reverse }}
+    {{ partial "post-card.html" . }}
+  {{- end }}
+</div>

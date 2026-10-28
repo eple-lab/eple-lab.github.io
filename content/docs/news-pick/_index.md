@@ -1,5 +1,6 @@
 ---
 title: news-pick
+description: 최신 AI 뉴스 3건으로 인스타그램 콘텐츠 패키지를 만드는 에이전트
 weight: 1
 ---
 

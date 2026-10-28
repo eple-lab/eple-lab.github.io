@@ -62,6 +62,9 @@ enableInlineShortcodes = true
   displayUpdatedDate = true
   dateFormat = '2006-01-02'
 
+# Google Form for "Connect to eple" on the home page; empty shows "준비 중"
+contactForm = 'https://forms.gle/DwmbbpCEJSkDK8LBA'
+
 [params.navbar]
   displayTitle = true
   displayLogo = false
@@ -82,8 +85,8 @@ enableInlineShortcodes = true
   url = 'https://github.com/eple-lab'
   icon = 'github'
 [[params.footer.links]]
-  name = 'Email'
-  url = 'mailto:eple_freeweb@naver.com'
+  name = 'Contact'
+  url = '/#connect'
   icon = 'mail'
 
 [params.search]

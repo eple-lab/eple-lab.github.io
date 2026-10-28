@@ -1,5 +1,6 @@
 ---
 title: dalbit-lake
+description: 달빛 호수를 배경으로 한 웹 게임 모음 (별빛 받기, 반딧불이 모으기)
 weight: 2
 ---
 

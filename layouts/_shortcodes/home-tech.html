@@ -1,0 +1,18 @@
+{{- /*
+Home page: a row of tech names that slowly scrolls sideways.
+
+@param {string} label Small label above the row.
+@param {string} items Comma-separated tech names.
+@param {bool} reverse Scroll the other way.
+*/ -}}
+{{- $items := split (.Get "items") "," -}}
+<div class="home-tech">
+  <p class="home-tech-label">{{ .Get "label" }}</p>
+  <div class="home-tech-track">
+    {{- /* The list is drawn twice so the loop has no gap; the copy is hidden from screen readers */ -}}
+    <div class="home-tech-row{{ if eq (.Get "reverse") "true" }} reverse{{ end }}">
+      {{- range $items }}<span>{{ trim . " " }}</span>{{ end -}}
+      {{- range $items }}<span aria-hidden="true">{{ trim . " " }}</span>{{ end -}}
+    </div>
+  </div>
+</div>

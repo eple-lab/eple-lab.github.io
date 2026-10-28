@@ -495,3 +495,228 @@
 .about-body h2:first-of-type {
   margin-top: 2rem;
 }
+
+/* Home page: hero, quick facts, project row, tech rows, latest posts, contact */
+.home-hero,
+.home-section {
+  width: 100%;
+  max-width: 56rem;
+}
+
+.home-hero {
+  padding: 1.5rem 0 1rem;
+}
+
+.home-title {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.home-tagline {
+  margin: 0.75rem 0 0;
+  font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+  font-weight: 600;
+  color: hsl(var(--primary-hue) var(--primary-saturation) 45%);
+}
+
+.home-sub {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.home-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgb(127 127 127 / 0.35);
+  font-weight: 500;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.home-btn:hover {
+  border-color: hsl(var(--primary-hue) var(--primary-saturation) 45%);
+}
+
+.home-btn-primary {
+  border-color: transparent;
+  color: #fff;
+  background: hsl(var(--primary-hue) var(--primary-saturation) 38%);
+}
+
+.home-btn-primary:hover {
+  background: hsl(var(--primary-hue) var(--primary-saturation) 32%);
+}
+
+.home-btn-disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.home-section {
+  margin-top: 4rem;
+}
+
+.home-heading {
+  margin: 0 0 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Quick facts: label column + text column */
+.home-facts {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.home-facts div {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.home-facts dt {
+  font-weight: 600;
+  color: hsl(var(--primary-hue) var(--primary-saturation) 45%);
+}
+
+.home-facts dd {
+  margin: 0;
+}
+
+.home-facts a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-facts a:hover {
+  color: hsl(var(--primary-hue) var(--primary-saturation) 45%);
+}
+
+@media (max-width: 640px) {
+  .home-facts div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.1rem;
+  }
+}
+
+/* Projects: one card per doc project; scrolls sideways once there are more than fit */
+.home-projects {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+}
+
+.home-project {
+  flex: 0 0 min(18rem, 80%);
+  scroll-snap-align: start;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgb(127 127 127 / 0.2);
+  border-radius: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.home-project:hover {
+  border-color: hsl(var(--primary-hue) var(--primary-saturation) 45%);
+  transform: translateY(-2px);
+}
+
+.home-project h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.home-project p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+/* Tech rows: names slide sideways in a loop; stop for reduced motion */
+.home-tech + .home-tech {
+  margin-top: 1.25rem;
+}
+
+.home-tech-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.home-tech-track {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.home-tech-row {
+  display: flex;
+  gap: 0.5rem;
+  width: max-content;
+  animation: home-tech-slide 40s linear infinite;
+}
+
+.home-tech-row.reverse {
+  animation-direction: reverse;
+}
+
+.home-tech-track:hover .home-tech-row {
+  animation-play-state: paused;
+}
+
+.home-tech-row span {
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  color: hsl(var(--primary-hue) var(--primary-saturation) 45%);
+  border: 1px solid hsl(var(--primary-hue) var(--primary-saturation) 45% / 0.5);
+}
+
+@keyframes home-tech-slide {
+  to {
+    transform: translateX(calc(-50% - 0.25rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-tech-row {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+  }
+
+  .home-tech-row span[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+.home-posts {
+  margin-top: 0;
+}
+
+.home-connect p {
+  margin: 0 0 1.25rem;
+  opacity: 0.8;
+}

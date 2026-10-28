@@ -8,7 +8,7 @@ toc: false
 <aside class="about-card">
   <div class="about-avatar">e</div>
   <h2 class="about-name">eple</h2>
-  <p class="about-role">Backend Engineer · AI Agent (studying)</p>
+  <p class="about-role">Backend-focused Full-stack Developer · AI Agent</p>
   <p class="about-location">Seoul, Korea</p>
   <div class="about-stats">
     <div><strong>12+</strong><span>Years<br>Career</span></div>
@@ -19,7 +19,7 @@ toc: false
     <a href="https://github.com/eple-lab" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">{{< icon "github" >}}</a>
     <a href="https://discord.com/users/freewebeple" target="_blank" rel="noopener" title="Discord" aria-label="Discord">{{< icon "discord" >}}</a>
     <a href="https://www.linkedin.com/in/eple-e-3b3013442" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">{{< icon "linkedin" >}}</a>
-    <a href="mailto:eple_freeweb@naver.com" title="Email" aria-label="Email">{{< icon "mail" >}}</a>
+    <a href="/#connect" title="Contact" aria-label="Contact">{{< icon "mail" >}}</a>
   </div>
   <div class="about-tech">
     <span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>Spring Batch</span>

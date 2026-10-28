@@ -1,0 +1,11 @@
+{{- /* Home page: one card per project under /docs, in a horizontal row that scrolls when it overflows */ -}}
+{{- with site.GetPage "/docs" }}
+<div class="home-projects">
+  {{- range .Sections.ByWeight }}
+    <a class="home-project" href="{{ .RelPermalink }}">
+      <h3>{{ .Title }}</h3>
+      <p>{{- partial "utils/page-description" . -}}</p>
+    </a>
+  {{- end }}
+</div>
+{{- end }}

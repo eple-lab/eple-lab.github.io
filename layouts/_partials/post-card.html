@@ -1,0 +1,18 @@
+{{- /*
+One post card, used by the blog list and the home page.
+
+@param {Page} . The post.
+*/ -}}
+<a class="post-card" href="{{ .RelPermalink }}">
+  <div class="post-card-head">
+    <h3 class="post-card-title">{{ .Title }}</h3>
+    {{- with .Params.categories }}<span class="post-card-badge">{{ index . 0 }}</span>{{ end }}
+  </div>
+  <p class="post-card-meta">{{ partial "utils/format-date" .Date }} · {{ .ReadingTime }}분 분량</p>
+  <p class="post-card-summary">{{- partial "utils/page-description" . -}}</p>
+  {{- with .Params.tags }}
+    <div class="post-card-tags">
+      {{- range . }}<span>{{ . }}</span>{{ end -}}
+    </div>
+  {{- end }}
+</a>
