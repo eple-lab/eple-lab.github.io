@@ -1,0 +1,216 @@
+{{- /*
+Local-only writing page (hugo server): pick a folder and a template, then open
+GitHub's new-file screen with the path and the post skeleton filled in.
+The production build ignores content/write.md, so this page is never deployed.
+*/ -}}
+{{ define "main" }}
+  {{- /* Blog folders have no _index.md, so read each folder name from the post paths (blog/<folder>/...) */ -}}
+  {{- $folders := slice -}}
+  {{- $seen := dict -}}
+  {{- range (where site.RegularPages "Section" "blog").ByDate.Reverse -}}
+    {{- $name := index (split (strings.TrimPrefix "/" (path.Clean .File.Dir)) "/") 1 | default "" -}}
+    {{- if and $name (not (isset $seen $name)) -}}
+      {{- $seen = merge $seen (dict $name true) -}}
+      {{- $category := "" -}}
+      {{- with .Params.categories -}}{{- $category = index . 0 -}}{{- end -}}
+      {{- $folders = $folders | append (dict "folder" $name "category" $category) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- range .Params.extraFolders -}}
+    {{- $folders = $folders | append (dict "folder" .folder "category" .category) -}}
+  {{- end -}}
+  {{- $newBase := replace site.Params.editURL.base "/edit/" "/new/" -}}
+  <div class="hx:mx-auto hx:flex hextra-max-page-width">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" false) }}
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--hextra-navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8">
+      <main id="content" class="hx:w-full hx:min-w-0 hextra-max-page-width hx:px-6 hx:pt-4">
+        <div class="write">
+          <h1 class="blog-title">글쓰기</h1>
+          <p class="write-note">로컬 서버에서만 보이는 페이지예요. "작성 시작"을 누르면 GitHub 새 파일 화면이 열리고, Commit하면 배포돼요.</p>
+
+          <form class="write-form" id="write-form">
+            <label>폴더
+              <select id="w-folder">
+                {{- range $folders }}
+                  <option value="{{ .folder }}" data-category="{{ .category }}">{{ .folder }}{{ with .category }} ({{ . }}){{ end }}</option>
+                {{- end }}
+              </select>
+            </label>
+            <label>틀
+              <select id="w-kind">
+                <option value="retrospective">프로젝트 회고</option>
+                <option value="assignment">과제 제출</option>
+                <option value="learning-log">러닝로그</option>
+                <option value="blank">빈 글</option>
+              </select>
+            </label>
+            <label>제목
+              <input id="w-title" type="text" placeholder="예: dalbit-lake 프로젝트 회고">
+            </label>
+            <label>파일 이름 (영문, 날짜는 자동)
+              <input id="w-slug" type="text" placeholder="예: dalbit-lake-retrospective">
+            </label>
+            <label class="write-check">
+              <input id="w-bundle" type="checkbox" checked>
+              이미지를 넣을 글 (폴더/index.md로 만들기)
+            </label>
+            <p class="write-path">경로: <code id="w-path"></code></p>
+            <div class="write-buttons">
+              <button type="submit" class="home-btn home-btn-primary">작성 시작</button>
+              <button type="button" class="home-btn" id="w-copy">본문 복사</button>
+            </div>
+          </form>
+
+          <textarea id="w-preview" class="write-preview" rows="22" readonly></textarea>
+        </div>
+      </main>
+    </article>
+  </div>
+
+  <script>
+  (function () {
+    var newBase = {{ $newBase }};
+    var $ = function (id) { return document.getElementById(id); };
+
+    var bodies = {
+      retrospective: [
+        '한 줄 요약을 적어 주세요.',
+        '',
+        '<!--more-->',
+        '',
+        '## 프로젝트 개요 (문제 정의)',
+        '',
+        '- 무엇을, 왜 만들었나:',
+        '- 기간 / 팀 / 내 역할:',
+        '',
+        '## 수행 과정',
+        '',
+        '### 기획·설계',
+        '',
+        '### 구현',
+        '',
+        '## 트러블슈팅',
+        '',
+        '| 문제 | 원인 | 해결 |',
+        '|---|---|---|',
+        '|  |  |  |',
+        '',
+        '## 회고',
+        '',
+        '- 잘한 점:',
+        '- 아쉬운 점:',
+        '- 다음에 해 볼 것:',
+        '',
+        '## Link',
+        '',
+        '- '
+      ],
+      assignment: [
+        '어떤 과제였는지 한두 문장으로 적어 주세요.',
+        '',
+        '<!--more-->',
+        '',
+        '## 과제 내용',
+        '',
+        '## 내가 만든 것',
+        '',
+        '## 만든 과정',
+        '',
+        '## 결과',
+        '',
+        '## 마무리',
+        '',
+        '## Link',
+        '',
+        '- '
+      ],
+      'learning-log': [
+        '오늘 무엇을 배웠는지 한 줄로 적어 주세요.',
+        '',
+        '<!--more-->',
+        '',
+        '## 오늘의 학습 주제',
+        '',
+        '## 배운 것',
+        '',
+        '## 막힌 것과 해결',
+        '',
+        '## 느낀 점과 더 알아볼 것'
+      ],
+      blank: [
+        '요약을 적어 주세요.',
+        '',
+        '<!--more-->',
+        ''
+      ]
+    };
+
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function today() {
+      var d = new Date();
+      return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+    }
+    function now() {
+      var d = new Date();
+      return today() + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':00';
+    }
+
+    // slug-YYYY-MM-DD, as a folder with index.md when the post will have images
+    function fileName() {
+      var slug = $('w-slug').value.trim().toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '') || 'new-post';
+      var name = slug + '-' + today();
+      return $('w-bundle').checked ? name + '/index.md' : name + '.md';
+    }
+
+    function text() {
+      var opt = $('w-folder').selectedOptions[0];
+      var category = opt ? opt.dataset.category : '';
+      var lines = [
+        '---',
+        'title: ' + ($('w-title').value.trim() || '제목'),
+        'date: ' + now(),
+        'categories:',
+        '  - ' + (category || '카테고리'),
+        'tags:',
+        '  - ',
+        '---',
+        ''
+      ];
+      return lines.concat(bodies[$('w-kind').value]).join('\n') + '\n';
+    }
+
+    function update() {
+      $('w-path').textContent = 'content/blog/' + $('w-folder').value + '/' + fileName();
+      $('w-preview').value = text();
+    }
+
+    // Picking a folder suggests the matching template
+    $('w-folder').addEventListener('change', function () {
+      if (bodies[this.value]) $('w-kind').value = this.value;
+      update();
+    });
+    ['w-kind', 'w-title', 'w-slug', 'w-bundle'].forEach(function (id) {
+      $(id).addEventListener('input', update);
+      $(id).addEventListener('change', update);
+    });
+
+    $('write-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var url = newBase + '/blog/' + $('w-folder').value +
+        '?filename=' + encodeURIComponent(fileName()) +
+        '&value=' + encodeURIComponent(text());
+      window.open(url, '_blank', 'noopener');
+    });
+
+    $('w-copy').addEventListener('click', function () {
+      navigator.clipboard.writeText(text()).then(function () {
+        $('w-copy').textContent = '복사됨';
+        setTimeout(function () { $('w-copy').textContent = '본문 복사'; }, 1500);
+      });
+    });
+
+    if (bodies[$('w-folder').value]) $('w-kind').value = $('w-folder').value;
+    update();
+  })();
+  </script>
+{{ end }}

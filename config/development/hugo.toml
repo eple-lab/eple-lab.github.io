@@ -1,0 +1,38 @@
+# Only for `hugo server` (development): show the local writing page.
+# The production build (GitHub Actions) uses the root hugo.toml, which ignores content/write.md.
+ignoreFiles = []
+
+# A menu here replaces the root menu, so this repeats it with the writing page added
+[menu]
+[[menu.main]]
+  name = 'About'
+  pageRef = '/about'
+  weight = 1
+[[menu.main]]
+  name = 'Docs'
+  pageRef = '/docs'
+  weight = 2
+[[menu.main]]
+  name = 'Blog'
+  pageRef = '/blog'
+  weight = 3
+[[menu.main]]
+  name = '✏️ 글쓰기'
+  pageRef = '/write'
+  weight = 4
+[[menu.main]]
+  name = 'Search'
+  weight = 6
+  [menu.main.params]
+    type = 'search'
+[[menu.main]]
+  name = 'Theme'
+  weight = 7
+  [menu.main.params]
+    type = 'theme-toggle'
+[[menu.main]]
+  name = 'GitHub'
+  url = 'https://github.com/eple-lab'
+  weight = 8
+  [menu.main.params]
+    icon = 'github'

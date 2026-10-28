@@ -11,6 +11,9 @@ enableGitInfo = true
 hasCJKLanguage = true
 enableInlineShortcodes = true
 
+# The writing page is local only; config/development/hugo.toml brings it back for `hugo server`
+ignoreFiles = ['write\.md$']
+
 # date: when the post was first written (used for ordering)
 # lastmod: set by hand only when the content really changed; falls back to date
 [frontmatter]
@@ -27,6 +30,7 @@ enableInlineShortcodes = true
 [markup.goldmark.renderer]
   unsafe = true
 
+# config/development/hugo.toml repeats this menu (plus the local writing page); keep both in sync
 [menu]
 [[menu.main]]
   name = 'About'
