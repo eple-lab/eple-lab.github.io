@@ -2,6 +2,7 @@
 title: Hextra 테마로 바꾸기
 date: 2026-10-23 21:27:00
 aliases:
+  - /blog/dev/hugo-hextra_2026-10-23/
   - /blog/hugo-hextra/
 categories:
   - 개발

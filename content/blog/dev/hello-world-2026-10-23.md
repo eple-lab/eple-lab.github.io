@@ -2,6 +2,7 @@
 title: 첫 글
 date: 2026-10-23 20:10:00
 aliases:
+  - /blog/dev/hello-world_2026-10-23/
   - /blog/hello-world/
 categories:
   - 개발

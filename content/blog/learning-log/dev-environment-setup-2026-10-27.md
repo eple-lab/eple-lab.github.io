@@ -1,6 +1,8 @@
 ---
 title: 바이브 코딩 개발환경 세팅하기 - 깔았는데 왜 예전 버전이 나와?
 date: 2026-10-27 03:00:00
+aliases:
+  - /blog/learning-log/dev-environment-setup_2026-10-27/
 categories:
   - 러닝로그
 tags:

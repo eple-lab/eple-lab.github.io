@@ -30,5 +30,5 @@ news-pick을 만들어 온 과정과, 그때그때 무엇을 왜 정했는지 �
 
 커밋 [`a09cb63`](https://github.com/eple-lab/news-pick/commit/a09cb63) Initial commit
 
-- 콘텐츠 발행 과정을 컴퓨팅 사고(분해, 패턴, 추상화, 알고리즘)로 분석하는 과제에서 출발했습니다. → [과제 글](/blog/assignment/computational-thinking_2026-10-23/)
+- 콘텐츠 발행 과정을 컴퓨팅 사고(분해, 패턴, 추상화, 알고리즘)로 분석하는 과제에서 출발했습니다. → [과제 글](/blog/assignment/computational-thinking-2026-10-23/)
 - 과제의 추상화 결과인 "오늘의 뉴스 3개 3줄 요약 + 타겟 맞춤형 캡션 + 뉴스 링크"를 저장소 소개로 삼았습니다.

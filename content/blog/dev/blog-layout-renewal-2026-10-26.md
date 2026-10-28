@@ -2,6 +2,7 @@
 title: 블로그 레이아웃 바꾸기 - 카드 목록, 카테고리 사이드바, 소개 페이지
 date: 2026-10-26 14:30:00
 aliases:
+  - /blog/dev/blog-layout-renewal_2026-10-26/
   - /blog/blog-layout-renewal/
 categories:
   - 개발
