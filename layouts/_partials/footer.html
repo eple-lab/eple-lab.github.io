@@ -1,7 +1,8 @@
 {{- /* Overrides themes/hextra/layouts/_partials/footer.html: copyright on the left, contact links on the right */ -}}
 {{- $enableFooterSwitches := .Store.Get "enableFooterSwitches" | default false -}}
 {{- $displayThemeToggle := site.Params.theme.displayToggle | default true -}}
-{{- $footerSwitchesVisible := and $enableFooterSwitches (or hugo.IsMultilingual $displayThemeToggle) -}}
+{{- /* The theme switch row above the footer is hidden; the nav bar already has the theme toggle */ -}}
+{{- $footerSwitchesVisible := and false $enableFooterSwitches (or hugo.IsMultilingual $displayThemeToggle) -}}
 {{- $copyrightSectionVisible := or (.Site.Params.footer.displayPoweredBy | default true) .Site.Params.footer.displayCopyright -}}
 
 {{- $copyright := (T "copyright") | default "© 2024 Hextra." -}}

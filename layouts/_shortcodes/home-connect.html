@@ -1,6 +1,6 @@
-{{- /* Home page: "Connect to eple" button that opens the contact form set in params.contactForm */ -}}
-{{- with site.Params.contactForm }}
-<a class="home-btn home-btn-primary" href="{{ . }}" target="_blank" rel="noopener">비즈니스 문의</a>
-{{- else }}
-<span class="home-btn home-btn-disabled">문의 폼 준비 중</span>
-{{- end }}
+{{- /* Home page: inline "Contact" link that opens the contact form set in params.contactForm */ -}}
+{{- with site.Params.contactForm -}}
+<a class="home-connect-link" href="{{ . }}" target="_blank" rel="noopener">Contact</a>
+{{- else -}}
+Contact(준비 중)
+{{- end -}}

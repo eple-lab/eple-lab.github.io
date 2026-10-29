@@ -90,7 +90,7 @@ contactForm = 'https://forms.gle/DwmbbpCEJSkDK8LBA'
   icon = 'github'
 [[params.footer.links]]
   name = 'Contact'
-  url = '/#connect'
+  url = 'https://forms.gle/DwmbbpCEJSkDK8LBA'
   icon = 'mail'
 
 [params.search]

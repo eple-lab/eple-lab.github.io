@@ -1,18 +1,49 @@
 {{- /*
-Home page: a row of tech names that slowly scrolls sideways.
+Home page: a row of tech names, each with an icon, that slowly scrolls sideways.
 
 @param {string} label Small label above the row.
 @param {string} items Comma-separated tech names.
 @param {bool} reverse Scroll the other way.
 */ -}}
-{{- $items := split (.Get "items") "," -}}
+{{- /* Brand icons ("si:" + file in assets/icons/tech, from Simple Icons); anything else is a Hextra icon name */ -}}
+{{- $icons := dict
+  "Java" "si:openjdk" "Python" "si:python" "Spring Boot" "si:springboot" "Spring Security" "si:springsecurity"
+  "Spring Batch" "si:spring" "eGovFrame" "server" "MyBatis" "database" "JPA" "si:hibernate" "OAuth2" "key"
+  "MSA" "cube-transparent" "Kafka" "si:apachekafka" "Oracle" "database" "PostgreSQL" "si:postgresql"
+  "MySQL" "si:mysql" "Docker" "si:docker" "Kubernetes" "si:kubernetes" "Jenkins" "si:jenkins" "Git" "si:git"
+  "GitHub Actions" "si:githubactions" "GitHub Pages" "si:githubpages" "Hugo" "si:hugo" "Hextra" "template"
+  "Vue.js" "si:vuedotjs" "Nexacro" "desktop-computer" "XPlatform" "desktop-computer" "NCRM" "desktop-computer"
+  "HTML" "si:html5" "CSS" "si:css" "JavaScript" "si:javascript" "Three.js" "si:threedotjs"
+  "Claude Code" "si:claude" "Prompt Engineering" "chat-alt" "Agent Workflow Design" "puzzle"
+-}}
+{{- $names := slice -}}
+{{- range split (.Get "items") "," }}{{ $names = $names | append (trim . " ") }}{{ end -}}
+{{- $cells := slice -}}
+{{- $chars := 0 -}}
+{{- range $names -}}
+  {{- $icon := index $icons . | default "code" -}}
+  {{- $svg := "" -}}
+  {{- if hasPrefix $icon "si:" -}}
+    {{- with resources.Get (printf "icons/tech/%s.svg" (strings.TrimPrefix "si:" $icon)) }}{{ $svg = printf "<i class=\"home-tech-icon si\">%s</i>" .Content }}{{ end -}}
+  {{- else -}}
+    {{- $svg = printf "<i class=\"home-tech-icon\">%s</i>" (partial "utils/icon.html" (dict "name" $icon "attributes" "height=1em")) -}}
+  {{- end -}}
+  {{- $cells = $cells | append (printf "%s%s" $svg .) -}}
+  {{- $chars = add $chars (len .) -}}
+{{- end -}}
+{{- /* Short lists are repeated so each half of the loop is wider than the row; otherwise names pop in and out at the edge */ -}}
+{{- $reps := int (math.Ceil (div 14.0 (len $names))) -}}
+{{- /* Duration follows the row length so every row moves at the same slow speed (about 28px a second) */ -}}
+{{- $width := mul $reps (add (mul $chars 7.5) (mul (len $names) 44)) -}}
+{{- $seconds := math.Round (div $width 28.0) -}}
 <div class="home-tech">
   <p class="home-tech-label">{{ .Get "label" }}</p>
   <div class="home-tech-track">
-    {{- /* The list is drawn twice so the loop has no gap; the copy is hidden from screen readers */ -}}
-    <div class="home-tech-row{{ if eq (.Get "reverse") "true" }} reverse{{ end }}">
-      {{- range $items }}<span>{{ trim . " " }}</span>{{ end -}}
-      {{- range $items }}<span aria-hidden="true">{{ trim . " " }}</span>{{ end -}}
+    {{- /* The list is drawn twice so the loop has no gap; every copy after the first is hidden from screen readers */ -}}
+    <div class="home-tech-row{{ if eq (.Get "reverse") "true" }} reverse{{ end }}" style="animation-duration: {{ $seconds }}s">
+      {{- range $i, $_ := seq (mul $reps 2) }}
+        {{- range $cells }}<span{{ if $i }} aria-hidden="true"{{ end }}>{{ . | safeHTML }}</span>{{ end -}}
+      {{- end -}}
     </div>
   </div>
 </div>

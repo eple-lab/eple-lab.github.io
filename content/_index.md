@@ -7,16 +7,16 @@ layout: hextra-home
   <div class="home-hero-text">
     <p class="home-eyebrow">Backend-focused Full-stack · AI Agent</p>
     <h1 class="home-title">espace eple</h1>
-    <p class="home-tagline">Free web, with agents</p>
-    <p class="home-sub">웹을 좋아하는 풀스택 개발자가 에이전트와 함께 만든 것들</p>
-    <div class="home-buttons">
-      <a class="home-btn home-btn-primary" href="/blog/">블로그 보기</a>
-      <a class="home-btn" href="/about/">About eple</a>
+    <p class="home-sub">AI 에이전트와 함께 나만의 신호를 찾아가는 소중한 기록장</p>
+    <div class="home-links">
+      <a href="/blog/">blog →</a>
+      <a href="/about/">about →</a>
     </div>
   </div>
   <aside class="home-profile">
-    <div class="about-avatar">e</div>
+    <img class="home-logo" src="/images/logo.svg" alt="eple">
     <p class="home-profile-name">eple</p>
+    <p class="home-tagline">Free web, with agents</p>
     <p class="home-profile-loc">Seoul, Korea</p>
     <div class="about-links">
       <a href="https://github.com/eple-lab" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">{{< icon "github" >}}</a>
@@ -44,8 +44,9 @@ layout: hextra-home
 
 <section class="home-section">
   <p class="home-label">03 · What I work with</p>
-  {{< home-tech label="Backend · DevOps" items="Java, Spring Boot, Spring Security, Spring Batch, eGovFrame, MyBatis, JPA, OAuth2, MSA, Kafka, Oracle, PostgreSQL, MySQL, Docker, Kubernetes, Jenkins, Git" >}}
-  {{< home-tech label="Frontend · AI · Now learning" reverse="true" items="Vue.js, Nexacro, XPlatform, NCRM, HTML, CSS, JavaScript, Claude Code, AI Agent, Python, Hugo, Hextra, GitHub Actions, GitHub Pages, Three.js" >}}
+  {{< home-tech label="Backend · DevOps" items="Java, Python, Spring Boot, Spring Security, Spring Batch, eGovFrame, MyBatis, JPA, OAuth2, MSA, Kafka, Oracle, PostgreSQL, MySQL, Docker, Kubernetes, Jenkins, Git, GitHub Actions, GitHub Pages, Hugo, Hextra" >}}
+  {{< home-tech label="Frontend" reverse="true" items="Vue.js, Nexacro, XPlatform, NCRM, HTML, CSS, JavaScript, Three.js" >}}
+  {{< home-tech label="AI · Agent" items="Claude Code, Prompt Engineering, Agent Workflow Design" >}}
 </section>
 
 <section class="home-section">
@@ -54,9 +55,5 @@ layout: hextra-home
 </section>
 
 <section class="home-section home-connect" id="connect">
-  <div>
-    <h2 class="home-heading">Connect to eple</h2>
-    <p>AX 도입, AI 에이전트 구축, 협업·제휴 제안은 폼으로 남겨 주세요.</p>
-  </div>
-  {{< home-connect >}}
+  <p>AX 도입, AI 에이전트 구축, 협업·제휴 제안은 {{< home-connect >}}로 남겨 주세요.</p>
 </section>
