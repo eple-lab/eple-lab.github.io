@@ -1,8 +1,11 @@
-{{- /* Home page: the newest blog posts as post cards. @param {int} count How many posts (default 3). */ -}}
+{{- /* Home page: the newest blog posts as a compact list (title, date, folder). @param {int} count How many posts (default 3). */ -}}
 {{- $count := .Get "count" | default 3 -}}
 {{- $posts := where site.RegularPages "Section" "blog" -}}
-<div class="post-grid home-posts">
+<ul class="home-latest">
   {{- range first $count $posts.ByDate.Reverse }}
-    {{ partial "post-card.html" . }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span>{{ .Date.Format "2006.01.02" }}{{ with index (split (strings.TrimPrefix "/" (path.Clean .File.Dir)) "/") 1 }} · {{ . }}{{ end }}</span>
+    </li>
   {{- end }}
-</div>
+</ul>

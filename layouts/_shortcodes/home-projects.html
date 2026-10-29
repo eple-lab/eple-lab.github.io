@@ -1,4 +1,4 @@
-{{- /* Home page: one card per project under /docs, in a horizontal row that scrolls when it overflows */ -}}
+{{- /* Home page: one card per project under /docs, laid out in a grid */ -}}
 {{- with site.GetPage "/docs" }}
 <div class="home-projects">
   {{- range .Sections.ByWeight }}
