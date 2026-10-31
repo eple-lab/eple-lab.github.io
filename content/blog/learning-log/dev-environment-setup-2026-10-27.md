@@ -37,10 +37,10 @@ tags:
 nvm으로 최신 LTS v24.22.1 깔고 `nvm use`까지 했는데 `node -v` 치면 계속 예전 버전 나옴. 이상하네...?
 
 ```text
-C:\Users\eple>nvm use 24.22.1
+> nvm use 24.22.1
 Now using Node.js v24.22.1 by default.
 
-C:\Users\eple>node -v
+> node -v
 v24.21.0
 ```
 
@@ -60,7 +60,7 @@ MCP 수업 때 `uvx` 쓸 것 같아서 uv도 깔기로 함. PowerShell 설치 �
 winget install --id=astral-sh.uv -e
 ```
 
-근데 설치된 건 0.13.5인데 `uv --version` 치니까 0.12.19가 나옴 ㅋㅋㅋ 이것도 Node랑 똑같은 상황. 예전에 설치 스크립트로 깔아둔 uv가 `C:\Users\eple\.local\bin`에 있었고 그게 먼저 잡힌 거. 같은 폴더에 uv로 받아둔 Python 3.14도 있는 거 보니까 10월 초에 이미 써봤던 듯... 아 언제 깔았지? ㅋ
+근데 설치된 건 0.13.5인데 `uv --version` 치니까 0.12.19가 나옴 ㅋㅋㅋ 이것도 Node랑 똑같은 상황. 예전에 설치 스크립트로 깔아둔 uv가 사용자 폴더(`%USERPROFILE%\.local\bin`)에 있었고 그게 먼저 잡힌 거. 같은 폴더에 uv로 받아둔 Python 3.14도 있는 거 보니까 10월 초에 이미 써봤던 듯... 아 언제 깔았지? ㅋ
 
 하나만 남기려고 winget 쪽 지우고, 원래 있던 uv를 업데이트했다.
 
