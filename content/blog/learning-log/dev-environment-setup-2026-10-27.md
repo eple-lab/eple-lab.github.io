@@ -10,6 +10,10 @@ tags:
   - 개발환경
   - Node.js
   - uv
+# Also posted on Tistory (the original), so keep this copy out of search and the sitemap
+noindex: true
+sitemap:
+  disable: true
 ---
 
 "개발 환경 설정" 데... 설치보다 시간 더 걸린 게 있었다.
