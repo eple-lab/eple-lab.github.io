@@ -24,6 +24,15 @@ ignoreFiles = ['write\.md$']
   category = 'categories'
   tag = 'tags'
 
+# AIFFEL posts are also on Tistory (the original), so keep the github.io copies out of search and the sitemap
+[[cascade]]
+  [cascade.params]
+    noindex = true
+  [cascade.sitemap]
+    disable = true
+  [cascade.target]
+    path = '/blog/aiffel/**'
+
 [markup]
 [markup.highlight]
   noClasses = false
