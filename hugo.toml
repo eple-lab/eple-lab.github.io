@@ -38,6 +38,8 @@ ignoreFiles = ['write\.md$']
   noClasses = false
 [markup.goldmark.renderer]
   unsafe = true
+  # A single line break in a post stays a line break (posts are written in short lines)
+  hardWraps = true
 
 # config/development/hugo.toml repeats this menu (plus the local writing page); keep both in sync
 [menu]
