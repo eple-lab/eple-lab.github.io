@@ -1,7 +1,7 @@
 ---
 title: "AI이해-01 AI는 어떻게 배우나: 클로드에게 내 화면은 숫자로 보일까"
 date: 2026-11-04 21:00:00
-draft: true
+draft: false
 categories:
   - AIFFEL
 tags:
