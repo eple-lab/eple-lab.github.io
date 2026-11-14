@@ -15,6 +15,9 @@ git submodule update --init --recursive
 
 # 3. 블로그 폴더에서 미리보기 실행 → http://localhost:1313/
 hugo server
+
+# 3-1. 초안(draft: true) 글까지 보려면 -D를 붙인다
+hugo server -D
 ```
 
 `main`에 푸시하면 GitHub Actions(`.github/workflows/hugo.yml`)가 빌드해서 GitHub Pages에 배포합니다.
