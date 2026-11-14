@@ -1,7 +1,7 @@
 ---
 title: "AI이해-03 LLM과 로컬 실행: 0원짜리 챗봇은 정말 0원이었을까"
 date: 2026-11-09 21:00:00
-draft: true
+draft: false
 categories:
   - AIFFEL
 tags:
@@ -197,6 +197,6 @@ IP 조회는 내 컴퓨터가 아니라 내가 쓰는 인터넷 망의 끝부분
 ---
 
 **아이펠 AI 에이전트 3기 AI 이해하고 사용하기 기록**
-1. [AI이해-01 AI는 어떻게 배우나](/blog/aiffel/ai-use-01-learning-from-data-2026-11-04/)
-2. AI이해-02 트랜스포머와 토큰
+1. [AI이해-01 AI는 어떻게 배우나](/blog/aiffel/ai-use-01-learning-from-data-2026-11-05/)
+2. [AI이해-02 트랜스포머와 토큰](/blog/aiffel/ai-use-02-transformer-tokens-2026-11-06/)
 3. **AI이해-03 LLM과 로컬 실행** ← 지금 글
