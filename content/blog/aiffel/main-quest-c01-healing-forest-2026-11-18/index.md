@@ -1,7 +1,7 @@
 ---
 title: "메인퀘스트 C-01 「바이브 코딩으로 내 서비스 만들기」 및 회고: 숲속여행"
 date: 2026-11-18 21:00:00
-draft: true
+draft: false
 categories:
   - AIFFEL
 tags:
